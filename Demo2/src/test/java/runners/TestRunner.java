@@ -40,6 +40,7 @@ public class TestRunner
 		Results results = Runner.path("classpath:apis")
 				.outputCucumberJson(true)
 				.parallel(1);
+		System.out.println("results dir-----"+results.getReportDir());
 		TestRunner.generateReport(results.getReportDir());
 		assertTrue(results.getFailCount() == 0,results.getErrorMessages());
 	}
